@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Stotra</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+    <style>
+        /* following two viewport lines are equivalent to meta viewport statement above, and is needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+        /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+    </style>
+
+    <!-- See explanation at the bottom of this file for info regarding placement of JS libraries. -->
+    <!-- These library references (below) are just examples to give you the general idea... -->
+    <!-- <script src="lib/mc/hammer.js"></script> -->
+    <!-- <script src="lib/ft/fastclick.js"></script> -->
+    <!-- <script src="lib/jq/jquery.js"></script> -->
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/w3_v4.css">
+    <link rel="stylesheet" href="css/icons.css">
+</head>
+
+
+<body>
+    <nav class="w3-sidebar w3-bar-block w3-card" id="mySidebar">
+<div class="w3-container w3-theme-d2 w3-dark-gray">
+  <!--<span onclick="closeSidebar()" class="w3-button w3-display-topright w3-large">X</span>-->
+  <br>
+  <div class="w3-padding w3-center">
+    <img class="w3-circle" src="images/sln.jpg" alt="avatar" style="width:50%">
+  </div>
+</div>
+<a class="w3-bar-item w3-xlarge w3-button w3-padding-16 w3-center" id="hp" href="#"><img src="images/home.png" alt="Menu Bar" width="35" height="35" ></a>
+<a class="w3-bar-item w3-xlarge w3-button w3-padding-16" id="p1" href="#">ನೃಸಿಂಹ ಸ್ತುತಿ</a>
+
+
+<div class="w3-dropdown-click">
+  <button class="w3-button w3-block w3-left-align w3-xlarge" onclick="myAccFunc() ">
+  ಸುಳಾದಿಗಳು &#9660;
+  </button>
+     <div id="demoAcc" class="w3-dropdown-content w3-bar-block w3-card-2">
+        <a href="#" id="si1" class="w3-bar-item w3-padding-16 w3-button w3-xlarge w3-border-bottom">ನರಸಿಂಹ ಸುಳಾದಿ</a>
+        <a href="#" id="si2" class="w3-bar-item w3-button w3-padding-16 w3-xlarge w3-border-bottom">ಧನ್ವಂತರಿ ಸುಳಾದಿ</a>
+        <a href="#" id="si3" class="w3-bar-item w3-button w3-padding-16 w3-xlarge w3-border-bottom">ದುರ್ಗಾ ಸುಳಾದಿ</a>
+      </div>
+ </div>       
+<a class="w3-bar-item w3-xlarge w3-button w3-padding-16 " id="p3" href="#">ರಮಾ ಸ್ತೋತ್ರ</a>
+<a class="w3-bar-item w3-xlarge w3-button w3-padding-16" id="p4" href="#">ಯಂತ್ರೋದ್ಧಾರಕ ಸ್ತೋತ್ರ</a>
+<a class="w3-bar-item w3-xlarge w3-button w3-padding-16" id="p5" href="#">ನವಗ್ರಹ ಸ್ತೋತ್ರ</a><br><br><br><br><br>
+</nav>
+
+<header class="w3-top w3-bar w3-theme w3-gray">
+  <button class="w3-bar-item w3-button w3-xlarge w3-hover-theme sidebar_toggle" ><img src="images/menu_bar.png" alt="Menu Bar" width="50" height="50" ></button>
+  <h5 class="w3-bar-item w3-text-white">ಪ್ರಾತ: ಪಾರಾಯಣ ಸ್ತೋತ್ರಗಳು</h5>
+</header>
+
+<div class="back-img" id="home_page" style="margin-top:50px;">
+    <br>
+      
+         
+          <img src="images/satyapramodaru.jpg" style="width:100%;height:100%" alt="Image" />
+     
+</div>
+    
+<div class="w3-hide" id="page1" style="margin-top:50px">
+    <br>
+    <h2 class="page_head w3-center  w3-xlarge"> ನೃಸಿಂಹ ಸ್ತುತಿ </h2>
+    
+<section class="para_font">
+     ಯತ್ಪಾದಪಂಕಜರಜ: ಪರಮಾದರೇಣ<br> ಸಂಸೇವಿತಂ ಸಕಲಕಲ್ಮಷರಾಶಿನಾಶಮ್&nbsp;|<br>
+   ಕಲ್ಯಾಣಕಾರಕಮಶೇಷನಿಜಾನುಗಾನಾಂ<br> ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||1<br><br>
+   ಸರ್ವತ್ರ ಚಂಚಲತಯಾ ಸ್ಥಿತಯಾಪಿ ಲಕ್ಷ್ಮ್ಯಾ<br>ಬ್ರಹ್ಮಾದಿವಂದ್ಯಪದಯಾ ಸ್ಥಿರಯಾನ್ಯಸೇವಿ&nbsp;|<br>
+   ಪಾದಾರವಿಂದಯುಗಲಂ ಪರಮಾದರೇಣ<br> ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||2<br><br>
+   ಯದ್ರುಪಮಾಗಮಶಿರ: ಪ್ರತಿಪಾದ್ಯಮಾದ್ಯ<br>ಮಾಧ್ಯಾತ್ಮಿಕಾದಿಪರಿತಾಪಹರಂ ವಿಚಿಂತ್ಯಂ&nbsp;|<br>
+   ಯೋಗೀಶ್ವರೈರಪಗತಾಖಿಲದೋಷಸಂಘೈ:<br>ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||3<br><br>
+   ಪ್ರಹ್ಲಾದ ಭಕ್ತವಚಸಾ ಹರಿರಾವಿರಾಸ<br>ಸ್ತಂಭೇ ಹಿರಣ್ಯಕಶಿಪುಂ ಯ ಉದಾರಭಾವ:&nbsp;|<br>
+   ಊರ್ವೋರ್ನಿಧಾಯ ತದುರೋನಖರೈರ್ದದಾರ<br>ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||4<br><br>
+   ಯೋ ನೈಜಭಕ್ತಮನಲಾಂಬುಧಿ ಭೂಧರೋಗ್ರ<br>ಶೃಂಗ ಪ್ರಪಾತ ವಿಷದಂತಿ ಸರಿಸೃಪೇಭ್ಯ:&nbsp;|<br>
+   ಸರ್ವಾತ್ಮಕ: ಪರಮಕಾರುಣಿಕೋ ರರಕ್ಷ <br>ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||5<br><br>
+   ಯರ್ನ್ನಿವಿಕಾರ ಪರರೂಪವಿಚಿಂತನೇನ<br>ಯೋಗೀಶ್ವರಾ ವಿಷಯವೀತಸಮಸ್ತರಾಗಾ:&nbsp;|<br>
+   ವಿಶ್ರಾಂತಿಮಾಪುರವಿನಾಶವತೀಪರಾಖ್ಯಾಂ<br>ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||6<br><br>
+   ಯದ್ರೂಪಮುಗ್ರಪರಿಮರ್ದನಭಾವಶಾಲಿ<br>ಸಂಚಿತನೇನ ಸಕಲಾಘವಿನಾಶಕಾರಿ&nbsp;|<br>
+   ಭೂತಜ್ವರಗ್ರಹಸಮುದ್ಭವಭೀತಿನಾಶಂ<br>ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||7<br><br>
+   ಯಸ್ಯೋತ್ತಮಂ ಯಶಉಮಾಪತಿಪದ್ಮಜನ್ಮ<br>ಶಕ್ರಾದಿದೈವತತಮಾಸು ಸಮಾಸುಗೀತಮ್|<br>
+   ಶಕ್ತೈವ ಸರ್ವಶಮಲಪ್ರಶಮೈಕದಕ್ಷಂ<br>ಸತ್ವಂ ನೃಸಿಂಹ ಮಯಿದೇಹಿಕೃಪಾವಲೋಕಂ&nbsp;||8<br><br>
+   ಏವಂಶ್ರುತ್ವಾ ಸ್ತುತಿಂ ದೇವ: ಶನಿನಾ ಕಲ್ಪಿತಾಂಹರಿ:|<br>ಉವಾಚ ಬ್ರಹಂವೃಂದಸ್ಯ ಶನಿಂ ತಂ ಭಕ್ತವತ್ಸಲ:||9<br><br>
+   <label class="text-center">ಶ್ರೀನೃಸಿಂಹ ಉವಾಚ</label><br>
+   ಪ್ರಸನ್ನೋsಹಂ ಶನೇ ತುಭ್ಯಂ ವರಂ ವರಯ ಶೋಭನಮ್|<br>ಯಂ ವಾಂಛಸಿ ತಮೇವ ತ್ವೋ ಸರ್ವಲೋಕಹಿತಾವಹಂ||10<br><br>
+   <label class="text-center">ಶನಿರುವಾಚ</label><br>
+   ನೃಸಿಂಹ ತ್ವಂ ಮಯಿಕೃಪಾಂ ಕುರುದೇವ ದಯಾನಿಧೇ|<br>ಮದ್ವಾಸರ: ತವ ಪ್ರೀತಿಕರ:ಸ್ಯಾದ್ದೇವತಾಪತೇ||11<br><br>
+   ಮತ್ಕೃತಂ ತ್ವತ್ಪರಂ ಸ್ತೋತ್ರಂ<br>ಶೃಣ್ವಂತಿ ಚ ಪಠಂತಿ ಚ|<br>ಸರ್ವಾನ್ ಕಾಮಾನ್ ಪೂರಯೇಥಾ:<br>ತೇಷಾಂ ತ್ವಂ ಲೋಕಭಾವನ||2<br><br>
+   <label class="text-center">ಶ್ರೀನೃಸಿಂಹ ಉವಾಚ</label><br>
+   ತಥೈವಾಸ್ತು ಶನೇsಹಂ ವೈ<br>ಭುವನಮಾಸ್ಥಿತ:|<br>ಭಕ್ತಕಾಮಾನ್ ಪೂರಯಿಷ್ಯೇ<br>ತ್ವಂ ಮಮೈಕಂ ವಚ: ಶೃಣು||13<br><br>
+   ತ್ವತ್ಕೃತಂ ಮತ್ಪರಂ ಸ್ತೋತ್ರಂ<br>ಯ:ಪಠೇತ್ ಶೃಣುಯಾಚ್ಚಯ:|<br>ದ್ವಾದಶಾಷ್ಥಮ ಜನ್ಮಸ್ಥಾತ್<br>ತ್ವದ್ಬಯಂ ಮಾಸ್ತು ತಸ್ಯ ವೈ||14<br><br>
+   ಶ್ರೀಶನೈಶ್ಚರಕೃತಾ ಶ್ರೀಲಕ್ಷೀನೃಸಿಂಹಸ್ತುತಿ ಸಂಪೂರ್ಣಂ<hr><br>
+</section>
+</div>
+<div class="w3-hide" id="page2" style="margin-top:50px">
+  
+<section class="" id="s1" style="">
+    <br>
+    <h2 class="w3-xxlarge w3-center">ನೃಸಿಂಹ ಸುಳಾದಿ</h2>
+    <section class="para_font">
+        ವೀರಸಿಂಹನೆ ನಾರಸಿಂಹನೆ ದಯ ಪಾರಾ|<br>
+ವಾರನೆ ಭಯ ನಿವಾರಣ ನಿರ್ಗುಣ ಸಾರಿದವರ ಸಂಸಾರ<br>
+ವೃಕ್ಷದ ಮೂಲ|ಬೇರರಿಸಿ ಕೀಳುವ ಬಿರಿದು ಭಯಂಕರ|<br>
+ಘೋರವತಾರ ಕರಾಳವದನ ಅ| ಘೋರ ದುರಿದು ಸಂಹಾರ<br>
+ಮಾಯಾಕಾರ ಕ್ರೂರದೈತ್ಯರ ಶೋಕ ಕಾರಣ ಉದುಭವ|<br>
+ಈರೇಳು ಭುವನ ಸಾಗರದೊಡೆಯ ಅರೌದ್ರನಾಮಕ <br>
+ವಿಜಯವಿಠ್ಠಲ ನರಸಿಂಗ|ವೀರರ ಸಾತಂಗ ಕಾರುಣ್ಯಪಾಂಗ||1<br><br>
+
+ಮಗುವಿನ ರಕ್ಕಸನು ಹಗಲಿರುಳು ಬಿಡದೆ|<br>
+ಹಗೆಯೆಂದಲಿ ಹೊಯ್ದು ನಗಪನ್ನಗ ವನಧಿ|<br>
+ಗಗನ ಮಿಗಿಲಾದ ಅಗಣಿತ ಬಾಧಿಯಲಿ|<br>
+ನೆಗೆದು ಒಗದು ಸಾವು ಬಗೆದು ಕೊಲ್ಲುತಿರಲು ಹೇ|<br>
+ಜಗದ ವಲ್ಲಭನೇ ಸುಗಣನಾದಿಗನೆ|<br>
+ನಿಗಮ ವಂದಿತನೆ ಪೋಗಳಿದ ಭಕುತರ|<br>
+ತಗಲಿ ತೊಲಗನೆಂದೂ ವಿಗೆ ಕೂಗುತ್ತಲಿರಲು|<br>
+ಯುಗ ಯುಗದೊಳು ದಯಾಳುಗಳ ದೇವರದೇವ|<br>
+ಯುಗಾದಿ ಕೃತನಾಮಾ ವಿಜಯವಿಠ್ಠಲ ಹೋ ಹೋ|<br>
+ಯುಗಳ ಕರವ ಮೂಗಿದು ಮಗುವು ಮೊರೆ ಇಡಲು||2<br><br>
+
+ಕೇಳಿದಾಕ್ಷಣ ಲಾಲಸಿ ಭಕ್ತನ್ನ ಮೌಳಿ ವೇಗದಲಿ ಪಾಲಿಸುವೆನೆಂದು |<br>
+ತಾಳಿ ಸಂತೋಷವೆ ತೂಳಿ ತೊಂಬಿದಂತೆ|<br>
+ಮೂಲೋಕದ ಪತಿವಾಲಯದಿಂದ ಸು-|<br>
+ಸ್ತೀಲ ದುರ್ಲಭ ನಾಮ ವಿಜಯವಿಠ್ಠಲ ಪಂಚ|<br>
+ಮೌಳಿ ಮಾನವ ಕಂಭ ಸೀಳಿ ಮೂಡಿದ ದೇವ||3<br><br>
+
+ಲಟ ಲಟಾ ಲಟಲಟಾ ಲಟಕಟಸಿ ವನಜಜಾಂಡ |<br>
+ಕಟಹ ಪಟ ಪಟ ಪುಟುತ್ಕಟದಿ ಬಿಚ್ಚತಿರಲು|<br>
+ಪುಟ ಪುಟ ಪುಟನೆಗೆದು ಚೀರಿ ಹಾರುತ್ತ ಪಲ್ಕಟ ಕಟಾ ಕಟ ಕಡಿದು ರೋಷದಿಂದ |<br>
+ಮಿಟಿ ಮಿಟಿ ಮಿಟನೆ ರಕ್ತಾಕ್ಷಿಯಲಿ ನೋಡಿ|<br>
+ತಟಿತ್ಕೋಟಿ ಊರ್ಭಟಗೆ ಆರ್ಭಟವಾಗಿರಲು |<br>
+ಕುಟಿಲರಹಿತ ವ್ಯಕ್ತ ವಿಜಯ ವಿಠ್ಠಲ ಶಕ್ತ | ದಿಟ ನಿಟಿಲ ನೇತ್ರ ಸುರಕಟಕ ಪರಿಪಾಲಾ||<br><br>
+
+ಬೊಬ್ಬಿರಿಯೇ ವೀರ ಧ್ವನಿಯಿಂದ ತನಿಗಿಡಿ |<br>
+ಹಬ್ಬಿ ಮುಂಚಿಣಿ ಉರಿ ಹೊರಗೆದ್ದು ಸುತ್ತೆ |<br>
+ಉಬ್ಬಸ ರವಿಗಾಗಿ ಅಬ್ಜ ನಡುಗುತಿರೆ |<br>
+ಅಬ್ದಿಸಪುತ ಉಕ್ಕಿ ಹೊರ ಚೆಲ್ಲಿ ಬರುತಿರೆ |<br>
+ಅಬುಜ ಬವಾದಿಗಳು ತಬ್ಬಿಬ್ಬಿಗೊಂಡಾರಿ |<br>
+ಅಬ್ಬರವೇನೆನುತ ನಭದ ಗೂಳಿಯು ತಗಿಯೆ |<br>
+ಶಬ್ದ ತುಂಬಿತು ಆವ್ಯಾಕೃತಾಕಾಶ ಪರಿಯಂತ |<br>
+ನಿಬ್ಬರ ತರುಗಿರಿ ಝರಿ ಝರಿಸಲು |<br>
+ಒಬ್ಬರಿಗೊಶವಲ್ಲದ ನಮ್ಮ ವಿಜಯ ವಿಠ್ಠಲ |<br>
+ಇಬ್ಬಗೆಯಾಗಿ ಕಂಬದಿಂದ ಪೊರಮಟ್ಟಾ ||5<br><br><br>
+    </section>
+</section> 
+<section class="w3-hide" id="s2" style="">
+    <br>
+    <h2 class="w3-xxlarge w3-center">ಧನ್ವಂತರಿ ಸುಳಾದಿ</h2>
+    <section class="para_font">
+        ಆಯುವೃದ್ದಿಯಾಗೋದು ಶ್ರೇಯಸ್ಸು ಬರುವದು|<br>ಕಾಯ ನಿರ್ಮಲಿನಾ ಕಾರಣವಾಗುಹದೋ|<br>ಮಾಯಾ ಹಿಂದಾವದು ನಾನಾ ರೋಗದ ಭಿಜ ಭೇಯಸಿ ಕಳೆವದು ವೇಗದಿಂದ|<br>ನಾಯಿ ಮೊದಲಾದ ಕುತ್ಸಿತ ದೇಹ ನಿ|<br>ಕಾಯವಾ ತೆತ್ತು ದುಷ್ಕರ್ಮದಿಂದ|<br>ಕ್ರೀಯಮಾಂ ಸಚಿಚಿತ ಭರಿತವಾಗಿದ್ದ ದುಃಖ|<br>ಹೇಯಸಾಗರದೊಳು ಬಿದ್ದು ಬಳಲೀ<br>
+ನೋಯಿಸಿಕೊಂಡು ನೆಲೆಗಾಣದೆ ಒಮ್ಮೆ ತನ್ನ<br>
+ಬಾಯಲಿ ವೈದ್ಯಮೂರ್ತಿ ಶ್ರೀಧನ್ವಂತ್ರಿ<br>
+ರಾಯಾ ರಾಜೌಷಧಿ ನಿಯಾಮಕ ಕರ್ತ<br>
+ಶ್ರೀಯರಸನೆಂದು ತುತಿಸಲಾಗಿ<br>
+ತಾಯಿ ಒದಗಿ ಬಂದು ಬಾಲನ್ನ ಸಾಕಿದಂತೆ<br>
+ನೋಯಗೊಡದೆ ನಮ್ಮನ್ನು ಪಾಲಿಪಾ<br>
+ಧ್ಯೇಯಾ ದೇವಾದಿಗಳಿಗೆ ಧರ್ಮಜ ಗುಣಸಾಂದ್ರ<br>
+ಶ್ರೇಯಸ್ಸು ಕೊಡುವನು ಭಜಕರಿಗೆ<br>
+ಮಾಯಾ ಮಂತ್ರದಿಂದ ಜಗವೆಲ್ಲ ವ್ಯಾಪಿಸಿದ<br>
+ನ್ಯಾಯವಂತನಾಗಿ ಚೇಷ್ಟೆ ಮಾಳ್ಪಾ<br>
+ವಾಯುವಂದಿತ ನಿತ್ಯ ವಿಜಯ ವಿಟ್ಠಲರೇಯಾ<br>
+ಪ್ರಿಯನು ಕಾಣೋ ನಮಗೆ ಅನಾದಿ ರೋಗ ಕಳೆವಾ || ೧ ||<br><br>
+        ಧನ್ವಂತ್ರಿ ಶ್ರೀಧನ್ವಂತ್ರಿ ಎಂದು<br>
+ಸನ್ನುತಿಸಿ ಸತತ ಭಿನ್ನ ಜ್ಞಾನದಿಂದ<br>
+ನಿನ್ನವ ನಿನ್ನವನೋ ಘನ್ನತಿಯಲಿ ನೆನೆವ<br>
+ಮನ್ನುಜ ಭುವನದೊಳು ಧನ್ಯನು ಧನ್ಯನೆನ್ನಿ<br>
+ಚೆನ್ನಮೂರುತಿ ಸುಪ್ರಸನ್ನ ವಿಜಯ ವಿಠ್ಠಲನ್ನ<br>
+ಸತ್ಯವೆಂದು ಬಣ್ಣಿಸು ಬಹು ವಿಧದಿ || ೨ ||<br><br>
+        
+ಶಶಿಕುಲೋದ್ಭವ ದೀರ್ಘತಮ ನಂದನದೇವಾ<br>
+ಶಶಿವರ್ಣ ಪ್ರಕಾಶ ಪ್ರಭುವೆ ವಿಭುವೆ<br>
+ಶಶಿಮಂಡಲ ಸಂಸ್ಥಿತ ಕಲಶ ಕಲಶಪಾಣಿ<br>
+ಬಿಸಜಲೋಚನ ಅಶ್ವಿನೇಯ ವಂದ್ಯಾ<br>
+ಶಶಿಗರ್ಭ ಭೂರುಹ ಲತೆ ಪೂದೆ ತಾಪ ಓ<br>
+ಡಿಸುವವೌಷಧಿ ತುಲಸಿ ಜನಕ <br>
+ಅಸುರ ನಿರ್ಜರ ತತಿನೆರೆದು ಗಿರಿಯ ತಂದು<br>
+ಮಿಸುಕದಲೆ ಮಹೋದಧಿ ಮರ್ದಿಸಲಾಗಿ<br>
+ನಸುನಗುತ ಪುಟ್ಟಿದೆ ಪೀಯೂಷ ಘಟ ಧರಿಸಿ<br>
+ಅಸಮ ದೈವನೆ ನಿನ್ನ ಮಹಿಮೆಗೆ ನಮೋ<br>
+ಬಿಸಜಸಂಭವ ರುದ್ರ ಮೊದಲಾದ ದೇವತಾ<br>
+ಋಷಿನಿಕರ ನಿನ್ನ ಕೊಂಡಾಡುವರೊ<br>
+ದಶದಿಶದೊಳು ಮೆರೆವ ವಿಜಯ ವಿಠ್ಠಲಭಿಷ್ಕಾ <br>
+ಅಸು ಇಂದ್ರಿಯಂಗಳ ರೋಗ ನಿವಾರಣ || ೩ ||<br><br>
+ಶರಣು ಶರಣು ಧನ್ವಂತರಿ ತಮೋಗುಣನಾಶಾ<br>
+ಶರಣು ಆರ್ತಜನ ಪರಿಪಾಲಕ ದೇವಾ<br>
+ತರುವೆ ಭವ ತಾಪಹರಣ ದಿತಿಸುತ<br>
+ಹರಣ ಮೋಹಕ ಲೀಲಾ ಪರಮಪೂರ್ಣ ಬ್ರಹ್ಮ<br>
+ಬ್ರಹ್ಮ ಉದ್ಧಾರಕ ಉರುಪರಾಕ್ರಮ<br>
+ಉರುಪರಾಕ್ರಮ ಉರಗಶಾಯಿ<br>
+ವರಕಿರೀಟ ಮಹಾಮಣಿ ಕುಂಡಲಕರ್ಣ<br>
+ಮಿರುಗುವ ಹಸ್ತ ಕಂಕಣ ಹಾರಪದಕ ತಾಂ<br>
+ಬರ ಕಾಂಚಿ ಪೀತಾಂಬರ ಚರಣಭೂಷಾ<br>
+ಸಿರಿವತ್ಸಲಾಂಚ್ಛನ ವಿಜಯ ವಿಟ್ಠಲರೇಯಾ<br>
+ತರುಣಗಾತರ ಜ್ಞಾನ ಮುದ್ರಾಂಕಿತ ಹಸ್ತಾ || ೪ ||<br><br>  
+ಏಳುವಾಗಲಿ ಮತ್ತೆ ತಿರುಗಿ ತಿರುಗುತಲಿ<br>
+ಬೀಳುವಾಗಲಿ ನಿಂತು ಕುಳಿತಿರುವಾಗಲಿ<br>
+ಹೇಳುವಾಗಲಿ ಮಾತು ಕೇಳುವಾಗಲಿ ಕರೆದು<br>
+ಪೇಳುವಾಗಲಿ ಪೋಗಿ ಸತ್ಕರ್ಮ ಮಾಡುವಾಗ<br>
+ಬಾಳುವಾಗಲಿ ಭೋಜನ ನಾನಾ ಷಡ್ರಸ ಸಂ<br>
+ಮ್ಮೇಳವಾಗಲಿ ಮೇಲು ಪುತ್ರಾದಿ ಒಡೆಯೊಡನೆ<br>
+ಖೇಳವಾಗಿ ಮನುಜಮರ್ಯಾದೆ ನಿನ್ನಯ<br>
+ನಾಲಿಗೆ ಕೊನೆಯಲ್ಲಿ ಧನ್ವಂತರಿ ಎಂದು ಒಮ್ಮೆ<br>
+ಕಾಲ ಅಕಾಲದಲ್ಲಿ ಸ್ಮರಿಸಿದರೆ ಅವಗೆ<br>
+ವೇಳ್ಯ ವೇಳ್ಯಗೆ ಬಾಹ ಭವಬೀಜ ಪರಿಹಾರ<br>
+ನೀಲಮೇಘಶ್ಯಾಮ ವಿಜಯ ವಿಠ್ಠಲರೇಯಾ<br>
+ವಾಲಗ ಕೊಡುವನು ಮುಕ್ತರ ಸಂಗದಲ್ಲಿ || ೫ ||<br><br>
+ಧಂ ಧನ್ವಂತರಿ ಎಂದು ಪ್ರಣವಪೂರ್ವಕದಿಂದ<br>
+ವಂದಿಸಿ ನೆನೆಯಲು ವಿಜಯವಿಠ್ಠಲ ವೊಲಿವಾ || ೬ ||<br><br><br>
+    </section>
+</section> 
+<section class="w3-hide" id="s3" style="">
+    <br>
+    <h2 class="w3-xxlarge w3-center">ದುರ್ಗಾ ಸುಳಾದಿ</h2>
+    
+    <section class="para_font">
+        ದುರ್ಗಾ ದುರ್ಗೆಯೆ ಮಹದುಷ್ಟಜನ ಸಂಹಾರೆ<br>
+ದುರ್ಗಾಂತರ್ಗತ ದುರ್ಗೆ ದುರ್ಲಭೆ ಸುಲಭೆ<br>
+ದುರ್ಗಮವಾಗಿದೆ ನಿನ್ನ ಮಹಿಮೆ ಬೊಮ್ಮ<br>
+ಭರ್ಗಾದಿಗಳಿಗೆಲ್ಲ ಗುಣಿಸಿದರೂ<br>
+ಸ್ವರ್ಗ ಭೂಮಿ ಪಾತಾಳ ವ್ಯಾಪುತ ದೇವಿ<br>
+ವರ್ಗಕ್ಕೆ ಮೀರಿದ ಬಲು ಸುಂದರೀ<br>
+ದುರ್ಗಣದವರ ಬಾಧೆ ಬಹಳವಾಗಿದೆ ತಾಯಿ<br>
+ದುರ್ಗತಿಹಾರೆ ನಾನು ಪೇಳುವುದೇನು<br>
+ದುರ್ಗಂಧವಾಗಿದೆ ಸಂಸೃತಿ ನೋಡಿದರೆ<br>
+ನಿರ್ಗಮ ನಾ ಕಾಣೆನಮ್ಮ ಮಂಗಳಾಂಗೆ<br>
+ದುರ್ಗೆ ಹೆ ದುರ್ಗೆ ಮಹಾ ದುರ್ಗೆ ಭೂದುರ್ಗೆ ವಿಷ್ಣು<br>
+ದುರ್ಗೆ ದುರ್ಜಯ ದುರ್ಧಕ್ಷೆ ಶಕ್ತಿ<br>
+ದುರ್ಗಕಾನನ ಗಹನ ಪರ್ವತಘೋರ ಸರ್ಪ<br>
+ಗರ್ಗರ ಶಬ್ದ ವ್ಯಾಘ್ರ ಕರಡಿ ಮೃತ್ಯು<br>
+ವರ್ಗ ಭೂತ ಪ್ರೇತ ಪೈಶಾಚಿ ಮೊದಲಾದ<br>
+ದುರ್ಗಣ ಸಂಕಟ ಪ್ರಾಪ್ತವಾಗೆ<br>
+ದುರ್ಗಾದುರ್ಗೆ ಎಂದು ಉಚ್ಚಸ್ವರದಿಂದ<br>
+ನಿರ್ಗಳಿತವಾಗಿ ಒಮ್ಮೆ ಕೂಗಿದರೂ<br>
+ಸ್ವರ್ಗಾಪವರ್ಗದಲ್ಲಿ ಹರಿಯೊಡನೆ ಇದ್ದರೂ<br>
+ಸುರ್ಗಣ ಜಯ ಜಯವೆಂದು ಪೊಗಳುತಿರೆ<br>
+ಕರ್ಗಳಿಂದಲಿ ಎತ್ತಿ ಸಾಕುವ ಸಾಕ್ಷಿ ಭೂತೆ<br>
+ನಿರ್ಗುಡಿದಂತೆ ಲೋಕ ಲೀಲೆ ನಿನಗೆ<br>
+ಸ್ವರ್ಗಂಗಾಜನಕ ನಮ್ಮ ವಿಜಯ ವಿಠ್ಠಲನಂಘ್ರಿ<br>
+ದುರ್ಗಾಶ್ರಮ ಮಾಡಿ ಬದುಕುವಂತೆ ಮಾಡು || ೧ ||<br><br>
+        
+ಅರಿದರಾಂಕುಶ ಶಕ್ತಿ ಪರಶು ನೇಗಲಿಖಡ್ಗ<br>
+ಸರಸಿಜ ಗದೆ ಮುದ್ಗರ ಚಾಪ ಮಾರ್ಗಣ<br>
+ವರ ಅಭಯ ಮುಸಲ ಪರಿ ಪರಿ ಆಯುಧವ<br>
+ಧರಿಸಿ ಮೆರೆವ ಲಕುಮಿ ಸರಸಿಜ ಭವ ರುದ್ರ<br>
+ಸರುವ ದೇವತೆಗಳ ಕರುಣಾಪಾಂಗದಲ್ಲಿ<br>
+ನಿರೀಕ್ಷಿಸಿ ಅವರವರ ಸ್ವರೂಪ ಸುಖಕೊಡುವ<br>
+ಸಿರಿಭೂಮಿ ದುರ್ಗಾ ಸರ್ವೋತ್ತಮ ನಮ್ಮ<br>
+ವಿಜಯ ವಿಠ್ಠಲನಂಘ್ರಿ<br>
+ಪರಮ ಭಕುತಿಯಿಂದ ಸ್ಮರಿಸುವ ಜಗಜ್ಜನನಿ || ೨ ||<br><br>
+
+ಸ್ತುತಿ ಮಾಡುವೆ ನಿನ್ನ ಕಾಳಿ ಮಹಾಕಾಳಿ ಉ<br>
+ನ್ನತ ಬಾಹು ಕರಾಳವದನೆ ಚಂದಿರೆ ಮುಖೆ<br>
+ಧೃತಿ ಶಾಂತಿ ಬಹುರೂಪೆ ರಾತ್ರಿ ರಾತ್ರಿ ಚರಣೆ<br>
+ಸ್ಥಿತಿಯೆ ನಿದ್ರಾಭದ್ರೆ ಭಕ್ತವತ್ಸಲೇ ಭವ್ಯೇ<br>
+ಚತುರಷ್ಟ ದ್ವಿಹಸ್ತೆ ಹಸ್ತಿ ಹಸ್ತಿ ಗಮನೆ ಅ<br>
+ದ್ಭುತ ಪ್ರಬಲೆ ಪ್ರವಾಸೆ ದುರ್ಗಾರಣ್ಯವಾಸೆ<br>
+ಕ್ಷಿತಿಭಾರಹರಣೆ ಕ್ಷೀರಾಬ್ಧಿ ತನಯೆ ಸ<br>
+ದ್ಗತಿ ಪ್ರದಾತೆ ಮಾಯಾ ಶ್ರೀಯೆ ಇಂದಿರೆ ರಮೆ<br>
+ದಿತಿ ಜಾತೆ ನಿಗ್ರಹೆ ನಿರ್ಧೂತ ಕಲ್ಮಷೆ<br>
+ಪ್ರತಿಕೂಲ ಭೇದೆ ಪೂರ್ಣಬೋಧೆ ರೌದ್ರೇ<br>
+ಅತಿಶಯ ರಕ್ತ ಜಿಹ್ವಾಲೋಲೆ ಮಾಣಿಕ್ಯಮಾಲೆ<br>
+ಜಿತಕಾಮೆ ಜನನ ಮರಣ ರಹಿತ ಖ್ಯಾತೆ<br>
+ಘೃತ ಪಾತ್ರ ಪರಮಾನ್ನ ತಾಂಬೂಲ ಹಸ್ತೆ ಸು<br>
+ವ್ರತೆ ಪತಿವ್ರತೆ ತ್ರಿನೇತ್ರೆ ರಕ್ತಾಂಬರೆ<br>
+ಶತಪತ್ರ ನಯನೆ ನಿರುತಕನ್ಯೇ ಉದಯಾರ್ಕ<br>
+ಶತಕೋಟಿ ಸನ್ನಿಭೆ ಹರಿಯಾಂಕಸಂಸ್ಥೆ<br>
+ಶ್ರುತಿತತಿನುತೆ ಶುಕ್ಲ ಶೋಣಿತ ರಹಿತೆ ಅ<br>
+ಪ್ರತಿಹತೆ ಸರ್ವದಾ ಸಂಚಾರಿಣಿ ಹ್ರೀ<br>
+ಉತ್ಪತ್ತಿ ಸ್ಥಿತಿಲಯ ಕರ್ತೆ ಶುಭ್ರಶೋಭನ ಮೂರ್ತೆ<br>
+ಪತಿತಪಾವನೆ ರನ್ನೆ ಸರ್ವೋಷಧಿಯಲಿದ್ದು<br>
+ಹತಮಾಡು ಕಾಡುವ ರೋಗಗಳಿಂದ<br>
+ಕ್ಷಿತಿಯೊಳು ಸುಖದಲ್ಲಿ ಬಾಳುವ ಮತಿಯಿತ್ತು<br>
+ಸತತ ಕಾಯಲಿ ಬೇಕು ದುರ್ಗೇ ದುರ್ಗೇ<br>
+ಚ್ಯುತದೂರ ವಿಜಯ ವಿಠ್ಠಲರೇಯನ ಪ್ರೀಯೆ<br>
+ಕೃತಾಂಜಲಿಯಿಂದಲಿ ತಲೆಬಾಗಿ ನಮಿಸುವೆ || ೩ ||<br><br>
+        
+ಶ್ರೀಲಕ್ಷ್ಮೀಕಮಲಾ ಪದ್ಮಾಪದ್ಮಿನಿ ಕಮ<br>
+ಲಾಲಯೆ ರಮಾ ವೃಷಾಕಪಿ ಧನ್ಯಾವೃದ್ಧಿವಿ<br>
+ಶಾಲಾ ಯಜ್ಞಾ ಇಂದಿರೆ ಹಿರಣ್ಯ ಹರಿಣಿ<br>
+ವಾಲಯ ಸತ್ಯ ನಿತ್ಯಾನಂದ ತ್ರಯಿ ಸುಧಾ<br>
+ಶೀಲೆ ಸುಗಂಧ ಸುಂದರಿ ವಿದ್ಯಾಸುಶೀಲೆ<br>
+ಸುಲಕ್ಷಣ ದೇವಿ ನಾನಾ ರೂಪಂಗಳಿಂದ ಮೆರೆವ ಮೃತ್ಯುನಾಶೆ<br>
+ವಾಲಗಕೊಡು ಸಂತರ ಸನ್ನಿಧಿಯಲ್ಲಿ<br>
+ಕಾಲ ಕಾಲಕೆ ಎನ್ನ ಭಾರ ವಹಿಸುವ ತಾಯಿ<br>
+ಮೇಲು ಮೇಲು ನಿನ್ನ ಶಕ್ತಿ ಕೀರ್ತಿ ಬಲು<br>
+ಕೇಳಿ ಕೇಳಿ ಬಂದೆ ಕೇವಲ ಈ ಮನ<br>
+ಘಾಳಿಯಂತೆ ಪರದ್ರವ್ಯಕ್ಕೆ ಪೊಪುದು<br>
+ಏಳಲ ಮಾಡದೆ ಉದ್ಧಾರ ಮಾಡುವ<br>
+ಕೈಲಾಸಪುರದಲ್ಲಿ ಪೂಜೆಗೊಂಬ ದೇವಿ<br>
+ಮೂಲಪ್ರಕೃತಿ ಸರ್ವ ವರ್ಣಾಭಿಮಾನಿನಿ<br>
+ಪಾಲಸಾಗರಶಾಯಿ ವಿಜಯ ವಿಠ್ಠಲನೊಳು<br>
+ಲೀಲೆ ಮಾಡುವ ನಾನಾಭರಣೆ ಭೂಷಣೆ ಪೂರ್ಣೆ || ೪ ||<br><br>
+        
+ಗೋಪಿನಂದನೆ ಮುಕ್ತೆ ದೈತ್ಯ ಸಂತತಿಗೆ ಸಂ<br>
+ತಾಪವ ಕೊಡುತಿಪ್ಪ ಮಹಾಕಠೋರೆ ಉಗ್ರ<br>
+ರೂಪ ವೈಲಕ್ಷಣೆ ಅಜ್ಞಾನಕ್ಕಭಿಮಾನಿನಿ<br>
+ತಪತ್ರಯ ವಿನಾಶ ಓಂಕಾರೆ ಹೂಂಕಾರೆ<br>
+ಪಾಪಿ ಕಂಸಗೆ ಭಯ ತೋರಿದೆ ಬಾಲ ಲೀಲೆ<br>
+ವ್ಯಾಪುತ ಧರ್ಮಮಾರ್ಗ ಪ್ರೇರಣೆ ಅಪ್ರಾಕೃತೆ<br>
+ಸ್ವಾಪದದಲಿ ನಿನ್ನ ನೆನೆಸಿದ ಶರಣನಿಗೆ<br>
+ಅಪಾರವಾಗಿದ್ದ ವಾರಿಧಿಯಂತೆ ಮಹಾ<br>
+ಆಪತ್ತು ಬಂದಿರಲು ಹಾರೆ ಪೋಗೋವು ಸಪ್ತ<br>
+ದ್ವೀಪ ನಾಯಿಕೆ ನರಕ ನಿರ್ಲೇಪೆ ತಮೋಗುಣದ<br>
+ವ್ಯಾಪಾರ ಮಾಡಿಸಿ ಭಕ್ತ ಜನಕೆ ಪುಣ್ಯ<br>
+ಸೋಪಾನ ಮಾಡಿಕೊಡುವ ಸೌಭಾಗ್ಯವಂತೆ ದುರ್ಗೆ<br>
+ಪ್ರಾಪುತವಾಗಿ ಎನ್ನ ಮನದಲಿ ನಿಂದು ದುಃಖ<br>
+ಕೂಪದಿಂದಲಿ ಎತ್ತಿ ಕಡೆ ಮಾಡು ಜನ್ಮಂಗಳ<br>
+ಸೌಪರ್ಣಿ ಮಿಗಿಲಾದ ಸತಿಯರು ನಿತ್ಯ ನಿನ್ನ<br>
+ಆಪಾದ ಮೌಳಿತನಕ ಭಜಿಸಿ ಭವ್ಯರಾದರು<br>
+ನಾ ಪೇಳುವದೇನು ಪಾಂಡವರ ಮನೋಭಿಷ್ಟೆ<br>
+ಈ ಪಂಚ ಭೌತಿಕದಲ್ಲಿ ಆವ ಸಾಧನೆ ಕಾಣೇ<br>
+ಶ್ರೀಪತಿ ನಾಮ ಒಂದೇ ಜಿಹ್ವಾಗ್ರದಲಿ ನೆನೆವ<br>
+ಔಪಾಸನ ಕೊಡು ರುದ್ರಾದಿಗಳ ವರದೇ<br>
+ತಾಪಸ ಜನಪ್ರೀಯ ವಿಜಯವಿಠ್ಠಲ ಮೂರ್ತಿಯ<br>
+ಶ್ರೀಪಾದಾರ್ಚನೆ ಮಾಳ್ಪಾ ಶ್ರೀಭೂದುರ್ಗಾ ವರ್ಣಿಶ್ರಯೆ || ೫ ||    <br><br>
+        
+ದುರ್ಗೆ ಹಾ ಹೇ ಹೋ ಹಾಃ ದುರ್ಗೆ ಮಂಗಳ ದುರ್ಗೆ<br>
+ದುರ್ಗೆತಿ ಕೊಡದಿರು ವಿಜಯವಿಠ್ಠಲಪ್ರೀಯೆ || ೬ ||   <br><br><br>     
+        
+
+    </section>
+</section> 
+</div> 
+<div class="w3-hide" id="page3" style="margin-top:50px">
+    <br>
+    <h2 class="page_head w3-center w3-xlarge">ರಮಾ ಸ್ತೋತ್ರ</h2>
+    <section class="para_font">
+        ಜಯ ಕೋಲ್ಹಾಪುರನಿಲಯೇ ಭಜದಿಷ್ಟೇತರವಿಲಯೇ|<br>
+   ತವ ಪಾದೌ ಹೃದಿ ಕಲಯೇ ರತ್ನರಚಿತವಲಯೇ||1<br><br>
+   ಜಯ ಜಯ ಸಾಗರಜಾತೇ ಕುರು ಕರುಣಾಂ ಮಯಿ ಭೀತೇ|<br>
+   ಜಗದಂಬಾಭಿಧಯಾ ತೇ ಜೀವತಿ ತವ ಪೋತೇ||2<br><br>
+   ಜಯ ಜಯ ಸಾಗರಸದನೇ ಜಯ ಕಾಂತ್ಯಾ ಜಿತಮದನೇ|<br>
+   ಜಯ ದುಷ್ಟಾಂತಕಕದನೇ ಕುಂದಮುಕುಲರದನೇ||3<br><br>
+   ಸುರರಮಣೀನುತಚರಣೇ ಸುಮನಃಸಂಕಟಹರಣೇ|<br>
+   ಸುಸ್ವರರಂಜಿತವೀಣೇ ಸುಂದರನಿಜಕಿರಣೇ||4<br><br>
+   ಕುಂಕುಮರಂಜಿತಘಾಲೇ ಕುಂಜರಬಾಂಧವಲೋಲೇ|<br>
+   ಕಲಧೌತಾಮಲಚೇಲೇ ಕೃಂತಕುಜನಜಾಲೇ||5<br><br>
+   ಭಜದಿಂಧೀವರಸೋಮೇ ಭವಮುಖ್ಯಾಮರಕಾಮೇ|<br>
+   ಭಯಮುಲಾಳಿವಿರಾಮೇ ಭಂಜಿತಮುನಿಭೀಮೇ||6<br><br>
+   ಧೃತಕರುಣಾರಸಪೂರೇ ಧನದಾನೋತ್ಸವಧೀರೇ|<br>
+   ಧ್ವನಿಲವನಿಂದಿತಕೀರೇ ಧೀರದನುಜದಾರೇ7<br><br>
+   ಸುರಹೃತ್ಪಂಜರಕೀರೇ ಸುಮಗೇಹಾರ್ಪಿತಹಾರೇ|<br>
+   ಸುಂದರಕುಂಜವಿಹಾರೇ ಸುರವರಪರಿವಾರೇ||8<br><br>
+   ವರಕಬರೀಧೃತಕುಸಮೇ ವರಕನಕಾಧಿಕಸುಷುಮೇ|<br>
+   ವನನಿಲಯಾದಯಭೀಮೇ ವದನವಿಜಿತಸೋಮೇ||9<br><br>
+   ಮದಕಲಭಾಲಸಗಮನೇ ಮಧುಮಥನಾಲಸನಯನೇ|<br>
+   ಮೃದುಲೋಲಾಲಕರಚನೇ ಮಧುರಸರಸಗಾನೇ||10<br><br>
+   ವ್ಯಾಘ್ರಪುರೀವರನಿಲಯೇ ವ್ಯಾಸಪದಾರ್ಪಿತಹೃದಯೇ|<br>
+   ಕುರು ಕರುಣಾಂ ಮಯಿ ಸದಯೇ ವಿವಿಧನಿಗಮಗೇಯೇ||11<br><br>
+   ||ಇತಿ ಶ್ರೀಹುಲಿಗೀಶ್ರಿಯಪತ್ಯಾಚಾರ್ಯವಿರಚಿತಂ ಶ್ರೀರಮಾಸ್ತೋತ್ರಮ್||<hr><br>
+    </section>
+</div> 
+<div class="w3-hide" id="page4" style="margin-top:50px">
+    <br>
+    <h2 class="page_head w3-center w3-xlarge">ಯಂತ್ರೋದ್ಧಾರಕ ಸ್ತೋತ್ರ</h2>
+    <section class="para_font">
+    ನಮಾಮಿ ದೂತಂ ರಾಮಸ್ಯ ಸುಖದಂ ಚ ಸುರದ್ರುಮಮ್ <br>
+
+ಪೀನವೃತ್ತ ಮಹಾಬಾಹುಂ ಸರ್ವ ಶತೃ ನಿವಾರಣಂ II೧II<br><br>
+
+ನಾನಾರತ್ನ ಸಮಾಯುಕ್ತಂ ಕುಂಡಲಾದಿ ವಿರಾಜಿತಮ್<br>
+
+ಸರ್ವದಾಭೀಷ್ಠದಾತರಾಂ ಸತಾಂ ವೈ ಧೃಢಮಾವಹೇ II೨II<br><br>
+
+ವಾಸಿನಂ ಚಕ್ರ ತೀರ್ಥಸ್ಯ ದಕ್ಷಿಣಸ್ಥ ಗಿರೌಸದಾ<br>
+
+ತುಂಗಾಂಬೋಧಿ ತರಂಗಸ್ಯ ವಾತೇನ ಪರಿಶೋಭಿತೇ II೩II<br><br>
+
+ನಾನಾದೇಶಗತೈಃ ಸದ್ಭಿಃ ಸೇವ್ಯಮಾನಂ ನೃಪೋತ್ತಮೈಃ<br>
+
+ಧೂಪದೀಪಾದಿ ನೈವೇದೈಃ ಪಂಚಖಾದ್ಯೈಶ್ಚಶಕ್ತಿತಃ II೪II<br><br>
+
+ಭಜಾಮಿ ಶ್ರೀ ಹನೂಮತಂ ಹೇಮಕಾಂತಿ ಸಮಪ್ರಭಮ್<br>
+
+ವ್ಯಾಸತೀರ್ಥ ಯತೀಂದ್ರೇಣ ಪೂಜಿತಂ ಪ್ರಣಿಧಾನತಃ II೫II<br><br>
+
+ತ್ರಿವಾರಂ ಯಃ ಪಠೇನ್ನಿತ್ಯಂ ಸ್ತೋತ್ರಂ ಭಕ್ತ್ಯಾ ದ್ವಿಜೋತ್ತಮಃ<br>
+
+ವಾಂಛಿತಂ ಲಭತೇ ಭೀಷ್ಟಂ ಷಣ್ಮಾಸಾಭ್ಯಂತರೇ ಖಲು II೬II<br><br>
+
+ಪುತ್ರಾರ್ಥಿ ಲಭತೇ ಪುತ್ರಾನ್ ಯಶಾರ್ಥಿ ಲಭತೇ ಯಶಃ<br>
+
+ವಿದ್ಯಾರ್ಥಿ ಲಭತೇ ವಿದ್ಯಾಂ ಧನಾರ್ಥಿ ಲಭತೇ ಧನಂ II೭II<br><br>
+
+ಸರ್ವಥಾ ಮಾಸ್ತು ಸಂದೇಹೋ ಹರಿಃ ಸಾಕ್ಷೀ ಜಗತ್ಪತಿಃ<br>
+
+ಯಃಕರೋತ್ಯತ್ರ ಸಂದೇಹಂ ಸಯಾತಿ ನರಕಂ ಧೃವಮ್II ೮II<br><br>
+Iಇತಿ ಶ್ರೀವ್ಯಾಸರಾಜಯತಿ ಕೃತ ಯಂತ್ರೋದ್ಧಾರಕ ಪ್ರಾಣದೇವ ಸ್ತೋತ್ರಂ ಸಂಪೂರ್ಣಂI<br><br>
+
+
+
+    </section>
+</div>
+<div class="w3-hide" id="page5" style="margin-top:50px">
+    <br>
+    <h2 class="page_head w3-center w3-xlarge">ನವಗ್ರಹ ಸ್ತೋತ್ರ</h2>
+    <section class="para_font">
+        ಜಪಾಕುಸುಮಸಂಕಾಶಂ ಕಾಶ್ಯಪೇಯಂ ಮಹದ್ಯುತಿಮ್ ।<br>
+       ತಮೋಽರಿಂ ಸರ್ವಪಾಪಘ್ನಂ ಪ್ರಣತೋಽಸ್ಮಿ ದಿವಾಕರಮ್ ॥ 1॥<br><br>
+        
+       ದಧಿಶಂಖತುಷಾರಾಭಂ ಕ್ಷೀರೋದಾರ್ಣವಸಂನಿಭಮ್ ।
+      ನಮಾಮಿ ಶಶಿನಂ ದೇವಂ ಶಂಭೋರ್ಮುಕುಟಭೂಷಣಮ್ ॥ 2॥<br><br>
+        
+        ಧರಣೀಗರ್ಭಸಂಭೂತಂ ವಿದ್ಯುತ್ಕಾಂತಿಸಮಪ್ರಭಮ್ ।
+        ಕುಮಾರಂ ಶಕ್ತಿಹಸ್ತಂ ಚ ಮಂಗಲಂ ಪ್ರಣಮಾಮ್ಯಹಮ್ ॥ 3॥<br><br>
+        
+        ಪ್ರಿಯಂಗುಕಲಿಕಾಶ್ಯಾಮಂ ರೂಪೇಣಾಪ್ರತಿಮಂ ಬುಧಮ್ ।
+ಸೌಮ್ಯಂ ಸೌಮ್ಯಗುಣೋಪೇತಂ ತಂ ಬುಧಂ ಪ್ರಣಮಾಮ್ಯಹಮ್ ॥ 4॥ <br><br>
+        
+        ದೇವಾನಾಂ ಚ ಋಷೀಣಾಂ ಚ ಗುರುಂ ಕಾಂಚನಸಂನಿಭಮ್ ।
+ಬುದ್ಧಿಭೂತಂ ತ್ರಿಲೋಕೇಶಂ ತಂ ನಮಾಮಿ ಬೃಹಸ್ಪತಿಮ್ ॥ 5॥ <br><br>
+        
+        ಹಿಮಕುಂದಸಮಾಭಾಸಂ ದೈತ್ಯಾನಾಂ ಪರಮಂ ಗುರುಮ್ ।
+ಸರ್ವಶಾಸ್ತ್ರಪ್ರವಕ್ತಾರಂ ಭಾರ್ಗವಂ ಪ್ರಣಮಾಮ್ಯಹಮ್ ॥ 6॥ <br><br>
+        
+        ನೀಲಾಂಜನಸಮಾಭಾಸಂ ರವಿಪುತ್ರಂ ಯಮಾಗ್ರಜಮ್ ।
+ಛಾಯಾಮಾರ್ತಂಡಸಂಭೂತಂ ತಂ ನಮಾಮಿ ಶನೈಶ್ಚರಮ್ ॥ 7॥ <br><br>
+        
+        ಅರ್ಧಕಾಯಂ ಮಹಾವೀರ್ಯಂ ಚಂದ್ರಾದಿತ್ಯವಿಮರ್ದನಮ್ ।
+ಸಿಂಹಿಕಾಗರ್ಭಸಂಭೂತಂ ತಂ ರಾಹುಂ ಪ್ರಣಮಾಮ್ಯಹಮ್ ॥ 8॥ <br><br>
+        
+        ಪಲಾಶಪುಷ್ಪಸಂಕಾಶಂ ತಾರಕಾಗ್ರಹಮಸ್ತಕಮ್ ।
+ರೌದ್ರಂ ರೌದ್ರಾತ್ಮಕಂ ಘೋರಂ ತಂ ಕೇತುಂ ಪ್ರಣಮಾಮ್ಯಹಮ್ ॥ 9॥ <br><br>
+        
+        ಇತಿ ವ್ಯಾಸಮುಖೋದ್ಗೀತಂ ಯಃ ಪಠೇತ್ಸುಸಮಾಹಿತಃ ।
+ದಿವಾ ವಾ ಯದಿ ವಾ ರಾತ್ರೌ ವಿಘ್ನಶಾಂತಿರ್ಭವಿಷ್ಯತಿ ॥ 10॥ <br><br>
+        
+        ನರನಾರೀನೃಪಾಣಾಂ ಚ ಭವೇದ್ದುಃಸ್ವಪ್ನನಾಶನಮ್ ।
+ಐಶ್ವರ್ಯಮತುಲಂ ತೇಷಾಮಾರೋಗ್ಯಂ ಪುಷ್ಟಿವರ್ಧನಮ್ ॥ <br><br>
+        
+        ಗ್ರಹನಕ್ಷತ್ರಜಾಃ ಪೀಡಾಸ್ತಸ್ಕರಾಗ್ನಿಸಮುದ್ಭವಾಃ ।
+ತಾಃ ಸರ್ವಾಃ ಪ್ರಶಮಂ ಯಾಂತಿ ವ್ಯಾಸೋ ಬ್ರೂತೇ ನ ಸಂಶಯಃ ॥ <br><br>
+        
+        ॥ ಇತಿ ಶ್ರೀವ್ಯಾಸವಿರಚಿತಂ ನವಗ್ರಹಸ್ತೋತ್ರಂ ಸಂಪೂರ್ಣಮ್ ॥<br><br><br>
+        
+        
+    </section>
+</div>  
+
+
+   
+    <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging weinre script URL here, if it does not work below. -->
+
+    <!-- See <head> section above for additional JS libraries loaded as part of this application. -->
+
+    <!-- "Phantom" cordova.js required for projects that use Cordova plugins. -->
+    <script src="cordova.js"></script>
+
+    <!-- for your event code, see README and file comments for details -->
+    <script src="js/app.js"></script>
+    <!-- for your init code, see README and file comments for details -->
+    <script src="js/init-app.js"></script>
+    <!-- normalizes device and document ready events, see file for details -->
+    <script src="xdk/init-dev.js"></script>
+    <script>
+        /* closeSidebar();
+              function openSidebar() {
+                       document.getElementById("mySidebar").style.display = "block";
+               }
+             function closeSidebar() {
+                  document.getElementById("mySidebar").style.display = "none";
+              }*/
+        
+       function myAccFunc() {
+    var x = document.getElementById("demoAcc");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-gray";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className = 
+        x.previousElementSibling.className.replace(" w3-gray", "");
+    }
+}
+
+   </script>
+    <script src="js/jquery_v3.2.1.js"></script>
+    <script src="js/comman.js"></script>
+    <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+    <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+</body>
+
+<!--
+
+    Recommended JavaScript library load order for hybrid Cordova apps:
+
+    * "Device-Independent" JavaScript libraries.
+    * optional: weinre debug script tag for remote console debug (see notes).
+    * Intel XDK device JavaScript library.
+    * Cordova/PhoneGap device JavaScript library.
+    * "Device-Dependent" JavaScript libraries.
+    * Application JavaScript <script> tags and libraries.
+    * optional: weinre debug script tag for remote console debug (see notes).
+
+    In complex projects, the JavaScript load order is important. You must
+    insure that the underlying device API native code finishes its init, which
+    usually takes longer than the webview init...
+
+    VERY IMPORTANT: notice that all of the libraries used in this project are
+    located within the app's local directories, which means they will get
+    bundled with the app. They are NOT being pulled in over the net. In most
+    cases, this is what you should be doing when you build a hybrid mobile
+    app. This insures that you always use the JS code that you debugged
+    against AND that you are not requiring a data connection (network
+    connection) to get the app started. If your app startup required a data
+    connection to initialize and start interaction with the user, lack of a
+    reliable network connection could be disasterous. Not to mention it
+    generally results in a slower load time. Loading locally is much
+    friendlier to your end user's data plan and their device battery.  :-)
+
+    NOTE: do not use a directory prefix with the cordova.js file - it is
+    inserted automatically by the build system, simulator and other tools and
+    is assumed to be in the index.html source directory. You will not find
+    this JS file anywhere in your project, it is a "phantom" library. If you
+    do see copies of this file as part of your project it should be removed to
+    avoid confusion and problems.
+
+    LIBRARY NOTE: If you are using a large number of JavaScript libraries,
+    especially third-party libraries (like jQuery, {{ mustache }}, Underscore,
+    etc.) that are "independent" of the device APIs provided by the Cordova
+    library and plugins - and they are independent of your app code - your
+    app initialization will be most successful if you load these libraries
+    BEFORE the Cordova JS file, in the <head> section of your index.html file.
+    Obviously, any code that depends on Cordova APIs must be loaded AFTER the
+    cordova.js library.
+
+    Libraries that are "independent" of the device APIs are libraries that you
+    could use in a desktop browser. "Dependent" libraries are, most likely,
+    your own code that you've written specifically to work with the Cordova
+    device APIs. In some cases, if your device-dependent code requires access
+    to device-independent code to get started, you may have to use something
+    like CommonJS to force the device-dependent code to wait for the
+    device-independent code to initialize, otherwise you may have trouble
+    getting your app started.
+
+    Because of this added dependency on the underlying native code (device)
+    initialization, you should not use the "document ready" event to start
+    your application. You should wait for the cordova "deviceready" event
+    before you begin your application (if it uses any Cordova device APIs); in
+    practice, it is best to wait for both. (See the init-dev.js file in this
+    template for an example of how to wait for both, it generates a custom
+    "app.Ready" event that you can wait for and just forget about the other
+    events.)
+
+    NOTE: *any* library that redefines addEventListener() or fiddles with
+    outstanding events may interfere with capturing the Cordova "deviceready"
+    event and should, therefore, be placed *BEFORE* the Cordova JS library in
+    the load order.
+
+    ALSO: if you use weinre for debugging, you may have to experiment with the
+    placement of the weinre script. Some recommended locations are shown
+    within this app. If these locations do not work, you may have to
+    experiment. The optimum placement can be app-specific, primarily as a
+    function of the included JavaScript libraries and your initialization.
+
+-->
+
+</html>
